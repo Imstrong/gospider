@@ -1,7 +1,6 @@
 package main
-type page struct {
+type Page struct {
 	title string
 	pics []string
 	url string
 }
-func newPage()
