@@ -17,23 +17,21 @@ type Cmd struct {
 func ParseCmd() *Cmd{
 	var cmd=&Cmd{}
 	flag.Usage=printUsage
-	flag.BoolVar(&cmd.helpFlag,"help",false,"print usage")
-	flag.BoolVar(&cmd.helpFlag,"h",false,"print usage")
-	flag.BoolVar(&cmd.helpFlag,"?",false,"print usage")
-	flag.BoolVar(&cmd.versionFlag,"v",false,"print version")
-	flag.BoolVar(&cmd.versionFlag,"version",false,"print version")
-	flag.IntVar(&cmd.ps,"ps",0,"set process number")
-	flag.IntVar(&cmd.idle,"idle",1000,"set idle time millis")
+	flag.BoolVar(&cmd.helpFlag,"help",false,"print usage\n")
+	flag.BoolVar(&cmd.helpFlag,"h",false,"print usage\n")
+	flag.BoolVar(&cmd.helpFlag,"?",false,"print usage\n")
+	flag.BoolVar(&cmd.versionFlag,"v",false,"print version\n")
+	flag.BoolVar(&cmd.versionFlag,"version",false,"print version\n")
+	flag.IntVar(&cmd.ps,"ps",0,"set process number\n")
+	flag.IntVar(&cmd.idle,"idle",1000,"set idle time millis\n")
 
 	flag.Parse()
 	args:=flag.Args()
 	if(len(args)==1){
 		cmd.conf=args[0]
-	}else{
-		printUsage()
 	}
 	return cmd
 }
 func printUsage(){
-	fmt.Print("usage:gospider.exe [-v|version|help|h|?|ps] <params>")
+	fmt.Print("usage:gospider.exe [-v|version|help|h|?|ps] <params>\n")
 }
